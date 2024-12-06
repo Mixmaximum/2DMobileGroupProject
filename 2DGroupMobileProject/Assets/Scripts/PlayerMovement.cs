@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             Dash();
         }
 
-        // Handle dash duration
+        //dash duration
         if (dashCounter > 0)
         {
             dashCounter -= Time.deltaTime; // Link dash to timer
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // Handle dash cooldown
+        //dash cooldown
         if (dashCoolCounter > 0)
         {
             dashCoolCounter -= Time.deltaTime; // Decrease cooldown
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             trail.emitting = false;
         }
     }
-        // Check for dash input
+        //dash input
        public void Dash()
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0) 
