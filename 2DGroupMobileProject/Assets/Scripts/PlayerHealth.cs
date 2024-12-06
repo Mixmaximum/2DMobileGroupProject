@@ -38,15 +38,16 @@ public class PlayerHealth : MonoBehaviour
             {
                 //health = health - 1;
                 health -= 1;
-            healthBar.fillAmount = health / maxHealth;
-            //health--;
-            //consequences for taking damage
-            //If we take damage so health is below 0, reload the level
-            if (health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                //SceneManager.LoadScene(levelToLoad);
-            }
+                healthBar.fillAmount = health / maxHealth;
+                playerIFrames.isInvincible = true;
+                //health--;
+                //consequences for taking damage
+                //If we take damage so health is below 0, reload the level
+                    if (health <= 0)
+                    {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //SceneManager.LoadScene(levelToLoad);
+                    }
             }
         }
     }
@@ -54,12 +55,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
         {
-            health -= 1;
-            healthBar.fillAmount = health / maxHealth;
-            if (health <= 0)
+            if (playerIFrames.isInvincible == false)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                //SceneManager.LoadScene(levelToLoad);
+                health -= 1;
+                healthBar.fillAmount = health / maxHealth;
+                playerIFrames.isInvincible = true;
+                if (health <= 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //SceneManager.LoadScene(levelToLoad);
+                }
+
             }
         }
     }
@@ -67,12 +73,17 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
         {
-            health -= 1;
-            healthBar.fillAmount = health / maxHealth;
-            if (health <= 0)
+            if (playerIFrames.isInvincible == false)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                //SceneManager.LoadScene(levelToLoad);
+                health -= 1;
+                healthBar.fillAmount = health / maxHealth;
+                playerIFrames.isInvincible = true;
+                if (health <= 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //SceneManager.LoadScene(levelToLoad);
+                }
+
             }
         }
     }
