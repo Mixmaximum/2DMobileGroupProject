@@ -6,7 +6,7 @@ public class PlayerIFrames : MonoBehaviour
 {
     public float invincibilityDuration = 2f;
     public bool isInvincible = false;
-    private float invincibilityTimeRemaining = 0f; 
+    public float invincibilityTimeRemaining = 0f; 
     public float cooldown = 1f;
     private float cooldownCounter = 0f;
 

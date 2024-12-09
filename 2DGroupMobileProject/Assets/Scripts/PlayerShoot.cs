@@ -28,42 +28,46 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot()
     {
-        timer = 0;
-        // Find all objects tagged as "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        // determine the shoot direction
-        Vector3 shootDirection = Vector3.zero;
-        GameObject nearestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-        // Check each enemy in range
-        foreach (GameObject enemy in enemies)
+        if (timer > shootDelay && Time.timeScale != 0)
         {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            // Only shoot enemies in range
-            if (distance <= detectionRange)
+            timer = 0;
+            // Find all objects tagged as "Enemy"
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            // determine the shoot direction
+            Vector3 shootDirection = Vector3.zero;
+            GameObject nearestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+            // Check each enemy in range
+            foreach (GameObject enemy in enemies)
             {
-                // Find the nearest enemy in range
-                if (distance < closestDistance)
+                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                // Only shoot enemies in range
+                if (distance <= detectionRange)
                 {
-                    nearestEnemy = enemy;
-                    closestDistance = distance;
+                    // Find the nearest enemy in range
+                    if (distance < closestDistance)
+                    {
+                        nearestEnemy = enemy;
+                        closestDistance = distance;
+                    }
                 }
             }
+            // shoot towards nearby enemy
+            if (nearestEnemy != null)
+            {
+                shootDirection = nearestEnemy.transform.position - transform.position;
+                shootDirection.Normalize();
+            }
+            else
+            {
+                // If no enemies in range, shoot in default direction 
+                shootDirection = transform.up; 
+            }
+            // Spawn the bullet and set its velocity
+            GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+            Destroy(bullet, bulletLifetime);
         }
-        // shoot towards nearby enemy
-        if (nearestEnemy != null)
-        {
-            shootDirection = nearestEnemy.transform.position - transform.position;
-            shootDirection.Normalize();
-        }
-        else
-        {
-            // If no enemies in range, shoot in default direction 
-            shootDirection = transform.right; 
-        }
-        // Spawn the bullet and set its velocity
-        GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
-        Destroy(bullet, bulletLifetime);
+
     }
 }

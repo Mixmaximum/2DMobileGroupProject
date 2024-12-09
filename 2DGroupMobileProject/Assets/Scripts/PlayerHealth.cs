@@ -40,10 +40,12 @@ public class PlayerHealth : MonoBehaviour
                 health -= 1;
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
+                playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
+                Debug.Log("Can't touch this");
                 //health--;
                 //consequences for taking damage
                 //If we take damage so health is below 0, reload the level
-                    if (health <= 0)
+                if (health <= 0)
                     {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     //SceneManager.LoadScene(levelToLoad);
@@ -60,6 +62,8 @@ public class PlayerHealth : MonoBehaviour
                 health -= 1;
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
+                playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
+                Debug.Log("Can't touch this");
                 if (health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -78,6 +82,8 @@ public class PlayerHealth : MonoBehaviour
                 health -= 1;
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
+                playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
+                Debug.Log("Can't touch this");
                 if (health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
