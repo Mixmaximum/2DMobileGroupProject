@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     {
         timer += Time.deltaTime; //0.01666666666 if 60fps
         //if we press "the shoot button" (left mouse?)
-        if (Input.GetButton("Fire1") && timer > shootDelay && Time.timeScale != 0)
+        if (Input.GetButton("Fire2") && timer > shootDelay && Time.timeScale != 0)
         {
             Shoot();
         }
