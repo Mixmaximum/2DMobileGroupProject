@@ -28,7 +28,7 @@ public class PlayerIFrames : MonoBehaviour
             if (invincibilityTimeRemaining <= 0)
             {
                 isInvincible = false;
-                Debug.Log("No longer invincible");
+                //Debug.Log("No longer invincible");
                 cooldownCounter = cooldown;
             }
         }
@@ -50,7 +50,7 @@ public class PlayerIFrames : MonoBehaviour
         {
             isInvincible = true;
             invincibilityTimeRemaining = invincibilityDuration;
-            Debug.Log("Can't touch this");
+            //Debug.Log("Can't touch this");
         }
     }
 }

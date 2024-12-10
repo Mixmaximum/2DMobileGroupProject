@@ -153,8 +153,8 @@ GameObject:
   - component: {fileID: 4939827588393016752}
   - component: {fileID: 8953487943155888471}
   - component: {fileID: 7670641345182051786}
-  - component: {fileID: 6258591296587955738}
   - component: {fileID: 414877636537217548}
+  - component: {fileID: 2999896791005798626}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -479,23 +479,6 @@ MonoBehaviour:
   isInvincible: 0
   invincibilityTimeRemaining: 0
   cooldown: 1
---- !u!114 &6258591296587955738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7227537099109628577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29ca2d71d2b8a949abec73831c093cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1221245095883243498, guid: b900c7b6f39cd5c4cb3a2f7013f6d760, type: 3}
-  bulletSpeed: 15
-  bulletLifetime: 2
-  shootDelay: 0.5
-  detectionRange: 10
 --- !u!114 &414877636537217548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,3 +494,20 @@ MonoBehaviour:
   health: 10
   levelToLoad: 
   healthBar: {fileID: 0}
+--- !u!114 &2999896791005798626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227537099109628577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ba1696473556b449cdeab926386eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1221245095883243498, guid: b900c7b6f39cd5c4cb3a2f7013f6d760, type: 3}
+  bulletSpeed: 10
+  bulletLifetime: 2
+  shootDelay: 0.5
+  detectionRange: 10

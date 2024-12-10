@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class PlayerShootFire : MonoBehaviour
 {
     [SerializeField]
     GameObject prefab;
@@ -15,19 +15,27 @@ public class PlayerShoot : MonoBehaviour
     float shootDelay = 0.5f;
     [SerializeField]
     float detectionRange = 10f;
-
-    void Update()
+    bool buttonPressed = false;
+    public void Update()
     {
         timer += Time.deltaTime; //0.01666666666 if 60fps
         //if we press "the shoot button" (left mouse?)
-        if (Input.GetButton("Fire2") && timer > shootDelay && Time.timeScale != 0)
+        if ((Input.GetButton("Fire2") || buttonPressed)  && timer > shootDelay && Time.timeScale != 0)
         {
             Shoot();
         }
     }
-
+    public void ButtonDown()
+    {
+        buttonPressed = true;
+    }
+    public void ButtonUp()
+    {
+        buttonPressed = false;
+    }
     public void Shoot()
     {
+        Debug.Log("shoot");
         if (timer > shootDelay && Time.timeScale != 0)
         {
             timer = 0;

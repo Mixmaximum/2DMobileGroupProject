@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         //we want to take damage IF the player hits the enemy capsule
         //bool key = true;
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
                 playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
-                Debug.Log("Can't touch this");
+                //Debug.Log("Can't touch this");
                 //health--;
                 //consequences for taking damage
                 //If we take damage so health is below 0, reload the level
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
                 playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
-                Debug.Log("Can't touch this");
+                //Debug.Log("Can't touch this");
                 if (health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -83,7 +83,7 @@ public class PlayerHealth : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
                 playerIFrames.isInvincible = true;
                 playerIFrames.invincibilityTimeRemaining = playerIFrames.invincibilityDuration;
-                Debug.Log("Can't touch this");
+                //Debug.Log("Can't touch this");
                 if (health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
