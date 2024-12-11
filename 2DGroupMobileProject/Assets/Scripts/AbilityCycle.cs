@@ -4,34 +4,76 @@ using UnityEngine;
 
 public class AbilityCycle : MonoBehaviour
 {
-    public float ShootFire;
-    public float ShootWater;
-    public float currentAbility;
+    public enum Ability
+    {
+        Fire,
+        Water
+    }
+
+    public Ability currentAbility;
+    public PlayerShootFire shootFire;
+    public PlayerShootWater shootWater;
+    float shootDelay = 0.5f;  // Delay between shots
+    float timer = 0;  // Timer for delay
+    bool buttonPressed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentAbility = ShootFire; //set active ability
+        currentAbility = Ability.Fire;  // Set default ability
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;  // Update timer
+        // Check if the shoot button is pressed
+        if ((Input.GetButton("Fire2") || buttonPressed) && timer > shootDelay && Time.timeScale != 0)
+        {
+            ShootAbility();  // Call the ShootAbility function
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Cycle();
+        }
+    }
+    //establish when the button is up and down for shooting
+    public void ButtonDown()
+    { 
+        buttonPressed = true;
     }
 
-    void Cycle() //Switch between abilities
+    public void ButtonUp()
     {
-        if (currentAbility == ShootFire)
+        buttonPressed = false;
+    }
+
+    // Cycle through abilities
+    public void Cycle()
+    {
+        if (currentAbility == Ability.Fire)
         {
-            currentAbility = ShootWater;
-            Debug.Log("Wata");
+            currentAbility = Ability.Water;
+            Debug.Log("Water ability activated");
         }
-        if (currentAbility == ShootWater)
+        else if (currentAbility == Ability.Water)
         {
-            currentAbility = ShootFire;
-            Debug.Log("FIRE");
+            currentAbility = Ability.Fire;
+            Debug.Log("Fire ability activated");
         }
     }
-   
+
+    // Trigger shooting based on current ability
+    public void ShootAbility()
+    {
+        if (currentAbility == Ability.Fire)
+        {
+            shootFire.Shoot();  // Call the Shoot method on the Fire shoot script
+        }
+        else if (currentAbility == Ability.Water)
+        {
+            shootWater.Shoot();  // Call the Shoot method on the Water shoot script
+        }
+        timer = 0;  // Reset the shoot timer
+    }
 }

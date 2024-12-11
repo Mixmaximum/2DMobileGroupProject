@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             dashCoolCounter -= Time.deltaTime; // Decrease cooldown
         }
+
         if (dashCounter <= 0)
         { 
             trail.emitting = false;

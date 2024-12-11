@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 7670641345182051786}
   - component: {fileID: 414877636537217548}
   - component: {fileID: 2999896791005798626}
+  - component: {fileID: 4518743996178476120}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -507,7 +508,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1221245095883243498, guid: b900c7b6f39cd5c4cb3a2f7013f6d760, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 16
   bulletLifetime: 2
-  shootDelay: 0.5
+  detectionRange: 10
+--- !u!114 &4518743996178476120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227537099109628577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039c2c7a027dbc74d89b8efc308b3cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4166003182865120335, guid: fccbc70134a8aa94bb3130e1714ec1f3, type: 3}
+  bulletSpeed: 12
+  bulletLifetime: 2
   detectionRange: 10
