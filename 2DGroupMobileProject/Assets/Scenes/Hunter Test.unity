@@ -1668,22 +1668,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 252218680397011673, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 252218680397011673, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
-      propertyPath: fireChance
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 252218680397011673, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
-      propertyPath: fireDamage
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 252218680397011673, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
-      propertyPath: maxFireDur
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4532431898444588484, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_Name
       value: Enemy
