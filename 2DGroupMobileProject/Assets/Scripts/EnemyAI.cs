@@ -12,11 +12,23 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     bool returnHome = true;
     Vector3 home;
+    float activeMoveSpeed;
+    float freezeLength;
+    public bool isFrozen;
+    [SerializeField]
+    float maxFreezeLength = 2;
+    int digit;
+    [SerializeField]
+    int freezeChance;
+    public GameObject freezeCube;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         home = transform.position;
+        activeMoveSpeed = chaseSpeed;
+        isFrozen = false;
+        freezeCube.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -32,19 +44,44 @@ public class EnemyAI : MonoBehaviour
             //chase direction = players position - my current position
             //move in the direction of the player
             chaseDir.Normalize();
-            GetComponent<Rigidbody2D>().velocity = chaseDir * chaseSpeed;
+            GetComponent<Rigidbody2D>().velocity = chaseDir * activeMoveSpeed;
         }
         else if(returnHome && homeDir.magnitude > 0.2f)
         {
             //return home
             homeDir.Normalize();
-            GetComponent<Rigidbody2D>().velocity = homeDir * chaseSpeed;
+            GetComponent<Rigidbody2D>().velocity = homeDir * activeMoveSpeed;
         }
         else
         {
             //if the player is not close & we're not trying to return home, stop moving
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
+        if (freezeLength > 0)
+        {
+            freezeLength -= Time.deltaTime;
+            if (freezeLength <= 0)
+            {
+                isFrozen = false;
+                activeMoveSpeed = chaseSpeed;
+                freezeCube.GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("WaterBullet") && !isFrozen) //When hit by the water bullet if not frozen
+        {
+            digit = Random.Range(0, 101); //chance if the enemy gets frozen or not
+            if (digit <= freezeChance)
+            {
+                isFrozen = true;
+                freezeLength = maxFreezeLength; // freeze enemy and start timer
+                activeMoveSpeed = 0;
+                Debug.Log("IM FROZEN");
+                freezeCube.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
     }
 }

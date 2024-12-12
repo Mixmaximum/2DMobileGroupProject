@@ -9,9 +9,12 @@ public class EnemyHealth : MonoBehaviour
     Image healthBar;
     float maxHealth;
     float fireDur;
-    public float fireDamage = 1;
-    public float maxFireDur = 2;
-    public float fireChance = 30;
+    [SerializeField]
+    float fireDamage = 2;
+    [SerializeField]
+    int maxFireDur = 1;
+    [SerializeField]
+    float fireChance = 30;
     bool onFire = false;
     int digit;
     // Start is called before the first frame update
@@ -40,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 onFire = false;
             }
-            if (health <= 0)
+            if (health <= 0.3)
             {
                 Destroy(gameObject);
             }
@@ -48,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.tag == "PlayerBullet"|| collision.gameObject.tag == "WaterBullet")
         {
             health -= 1;
             healthBar.fillAmount = health / maxHealth;
@@ -65,6 +68,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+
             digit = Random.Range(0, 101);
             if (digit <= fireChance && !onFire) //chance to light on fire if not on fire
             {

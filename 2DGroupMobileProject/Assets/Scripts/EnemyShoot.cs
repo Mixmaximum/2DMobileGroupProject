@@ -16,6 +16,7 @@ public class EnemyShoot : MonoBehaviour
     GameObject player;
     [SerializeField]
     float shootRange = 5;
+    public EnemyAI enemyAI;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class EnemyShoot : MonoBehaviour
     {
         timer += Time.deltaTime;
         Vector3 shootDir = player.transform.position - transform.position;
-        if(timer > shootDelay && shootDir.magnitude <= shootRange)
+        if(timer > shootDelay && shootDir.magnitude <= shootRange && enemyAI.isFrozen == false)
         {
             timer = 0;
             shootDir.Normalize();
