@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
     float fireChance = 30;
     bool onFire = false;
     int digit;
+    public ParticleSystem fireParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar = GetComponentsInChildren<Image>()[1];
         healthBar.fillAmount = health / maxHealth;
         onFire = false;
+        fireParticle.GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
             }
             if (fireDur <= 0)
             {
+                fireParticle.GetComponent<Renderer>().enabled = false;
                 onFire = false;
             }
             if (health <= 0.3)
@@ -74,6 +77,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 onFire = true;
                 fireDur = maxFireDur;
+                fireParticle.GetComponent<Renderer>().enabled = true;
                 Debug.Log("IM ON FIRE");
             }
         }

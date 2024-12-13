@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 898764771}
   - component: {fileID: 898764770}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Cycle Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,6 +1197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039c2c7a027dbc74d89b8efc308b3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1659580971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6272691773733017136, guid: d940f58d62480074dad667eee495f68a, type: 3}
+  m_PrefabInstance: {fileID: 2884023716897475532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8127a97bc7df04f991148f92557a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722799896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1834,6 +1845,10 @@ PrefabInstance:
       propertyPath: shootFire
       value: 
       objectReference: {fileID: 1659580953}
+    - target: {fileID: 8821896066770713055, guid: a6f79ef6536fd784eb342edba76d77ba, type: 3}
+      propertyPath: shootWind
+      value: 
+      objectReference: {fileID: 1659580971}
     - target: {fileID: 8821896066770713055, guid: a6f79ef6536fd784eb342edba76d77ba, type: 3}
       propertyPath: shootWater
       value: 

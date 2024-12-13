@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 414877636537217548}
   - component: {fileID: 2999896791005798626}
   - component: {fileID: 4518743996178476120}
+  - component: {fileID: 6272691773733017136}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -219,7 +220,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -300,7 +301,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &3023197273856334453
@@ -525,5 +526,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4166003182865120335, guid: fccbc70134a8aa94bb3130e1714ec1f3, type: 3}
   bulletSpeed: 12
+  bulletLifetime: 2
+  detectionRange: 10
+--- !u!114 &6272691773733017136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227537099109628577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8127a97bc7df04f991148f92557a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 816402539147504603, guid: 0fe2a53a2ba65d6429e550ecb6254444, type: 3}
+  bulletSpeed: 10
   bulletLifetime: 2
   detectionRange: 10

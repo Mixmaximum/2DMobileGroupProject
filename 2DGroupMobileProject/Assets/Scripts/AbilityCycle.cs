@@ -7,12 +7,14 @@ public class AbilityCycle : MonoBehaviour
     public enum Ability
     {
         Fire,
-        Water
+        Water,
+        Wind,
     }
 
     public Ability currentAbility;
     public PlayerShootFire shootFire;
     public PlayerShootWater shootWater;
+    public PlayerShootWind shootWind;
     float shootDelay = 0.5f;  // Delay between shots
     float timer = 0;  // Timer for delay
     bool buttonPressed = false;
@@ -58,6 +60,11 @@ public class AbilityCycle : MonoBehaviour
         }
         else if (currentAbility == Ability.Water)
         {
+            currentAbility = Ability.Wind;
+            Debug.Log("Wind ability activated");
+        }
+        else if (currentAbility == Ability.Wind)
+        {
             currentAbility = Ability.Fire;
             Debug.Log("Fire ability activated");
         }
@@ -68,12 +75,16 @@ public class AbilityCycle : MonoBehaviour
     {
         if (currentAbility == Ability.Fire)
         {
-            shootFire.Shoot();  // Call the Shoot method on the Fire shoot script
+            shootFire.Shoot();  //Shoot Fire 
         }
         else if (currentAbility == Ability.Water)
         {
-            shootWater.Shoot();  // Call the Shoot method on the Water shoot script
+            shootWater.Shoot();  //Shoot Water 
         }
-        timer = 0;  // Reset the shoot timer
+        else if (currentAbility == Ability.Wind)
+        {
+            shootWind.Shoot(); // Shoot Wind
+        }
+            timer = 0;  // Reset the shoot timer
     }
 }
