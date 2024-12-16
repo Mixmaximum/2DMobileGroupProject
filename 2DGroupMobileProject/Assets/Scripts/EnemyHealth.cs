@@ -54,7 +54,7 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet"|| collision.gameObject.tag == "WaterBullet")
+        if (collision.gameObject.tag == "PlayerBullet"|| collision.gameObject.tag == "WaterBullet" || collision.gameObject.tag == "WindBullet")
         {
             health -= 1;
             healthBar.fillAmount = health / maxHealth;

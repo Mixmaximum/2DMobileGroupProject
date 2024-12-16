@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityCycle : MonoBehaviour
 {
@@ -18,11 +19,12 @@ public class AbilityCycle : MonoBehaviour
     float shootDelay = 0.5f;  // Delay between shots
     float timer = 0;  // Timer for delay
     bool buttonPressed = false;
-
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
         currentAbility = Ability.Fire;  // Set default ability
+        image.color = Color.red;
     }
 
     // Update is called once per frame
@@ -57,16 +59,19 @@ public class AbilityCycle : MonoBehaviour
         {
             currentAbility = Ability.Water;
             Debug.Log("Water ability activated");
+            image.color = Color.cyan;
         }
         else if (currentAbility == Ability.Water)
         {
             currentAbility = Ability.Wind;
             Debug.Log("Wind ability activated");
+            image.color = Color.white;
         }
         else if (currentAbility == Ability.Wind)
         {
             currentAbility = Ability.Fire;
             Debug.Log("Fire ability activated");
+            image.color = Color.red;
         }
     }
 
