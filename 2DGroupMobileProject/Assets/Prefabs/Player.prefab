@@ -321,7 +321,7 @@ MonoBehaviour:
   dashSpeed: 50
   dashLength: 0.1
   dashCooldown: 1
-  trail: {fileID: 0}
+  trail: {fileID: 4939827588393016752}
 --- !u!96 &4939827588393016752
 TrailRenderer:
   serializedVersion: 3

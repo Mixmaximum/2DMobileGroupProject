@@ -25,6 +25,9 @@ public class AbilityCycle : MonoBehaviour
     {
         currentAbility = Ability.Fire;  // Set default ability
         image.color = Color.red;
+        shootFire = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootFire>();
+        shootWater = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootWater>();
+        shootWind = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootWind>();
     }
 
     // Update is called once per frame
