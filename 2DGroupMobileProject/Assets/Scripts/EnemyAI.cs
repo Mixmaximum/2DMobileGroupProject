@@ -19,9 +19,11 @@ public class EnemyAI : MonoBehaviour
     float maxFreezeLength = 2;
     int digit;
     [SerializeField]
-    int freezeChance;
+    float freezeChance;
     public GameObject freezeCube;
     public bool isKnockedBack = false;
+    public Difficulty difficulty;
+    float activeDifficulty;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class EnemyAI : MonoBehaviour
         activeMoveSpeed = chaseSpeed;
         isFrozen = false;
         freezeCube.GetComponent<SpriteRenderer>().enabled = false;
+        difficulty = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Difficulty>();
+        activeDifficulty = difficulty.activeDifficulty;
+        freezeChance = freezeChance - activeDifficulty;
     }
 
     // Update is called once per frame

@@ -22,7 +22,7 @@ public class Knockback : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();  
         enemyAI = GetComponent<EnemyAI>();
         activeKnockback = knockbackForce;
-        trail = GetComponent<TrailRenderer>();
+        trail = GetComponentInChildren<TrailRenderer>();
         trail.emitting = false;
     }
 

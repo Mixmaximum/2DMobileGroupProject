@@ -18,14 +18,19 @@ public class EnemyHealth : MonoBehaviour
     bool onFire = false;
     int digit;
     public ParticleSystem fireParticle;
+    public Difficulty difficulty;
+    float activeDifficulty;
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        maxHealth = health + activeDifficulty;
         healthBar = GetComponentsInChildren<Image>()[1];
         healthBar.fillAmount = health / maxHealth;
         onFire = false;
         fireParticle.GetComponent<Renderer>().enabled = false;
+        difficulty = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Difficulty>();
+        activeDifficulty = difficulty.activeDifficulty;
+        fireChance = fireChance - activeDifficulty / 2;
     }
 
     // Update is called once per frame

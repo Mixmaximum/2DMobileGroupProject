@@ -10,6 +10,8 @@ TagManager:
   - FireBullet
   - WaterBullet
   - WindBullet
+  - GameManager
+  - CycleManager
   layers:
   - Default
   - TransparentFX
