@@ -30,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
         fireParticle.GetComponent<Renderer>().enabled = false;
         difficulty = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Difficulty>();
         activeDifficulty = difficulty.activeDifficulty;
-        fireChance = fireChance - activeDifficulty / 2;
+        fireChance = fireChance - activeDifficulty;
     }
 
     // Update is called once per frame

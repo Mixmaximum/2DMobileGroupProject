@@ -410,6 +410,7 @@ MonoBehaviour:
   freezeChance: 10
   freezeCube: {fileID: 8055606034883317328}
   isKnockedBack: 0
+  difficulty: {fileID: 0}
 --- !u!114 &4179018726334465685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +446,7 @@ MonoBehaviour:
   maxFireDur: 3
   fireChance: 20
   fireParticle: {fileID: 8079902617116731010}
+  difficulty: {fileID: 0}
 --- !u!60 &4422370215825895865
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -507,9 +509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 10
   superKnockbackForce: 100
-  knockbackChance: 70
-  superKnockbackChance: 20
+  knockbackChance: 30
+  superKnockbackChance: 1
   trail: {fileID: 7182457572207640936}
+  difficulty: {fileID: 0}
 --- !u!1 &4819214472813993694
 GameObject:
   m_ObjectHideFlags: 0

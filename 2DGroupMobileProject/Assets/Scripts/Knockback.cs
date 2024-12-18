@@ -17,6 +17,8 @@ public class Knockback : MonoBehaviour
     float superKnockbackChance = 1;
     float activeKnockback;
     public TrailRenderer trail;
+    public Difficulty difficulty;
+    float activeDifficulty;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  
@@ -24,6 +26,9 @@ public class Knockback : MonoBehaviour
         activeKnockback = knockbackForce;
         trail = GetComponentInChildren<TrailRenderer>();
         trail.emitting = false;
+        difficulty = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Difficulty>();
+        activeDifficulty = difficulty.activeDifficulty;
+        knockbackChance = knockbackChance - activeDifficulty;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

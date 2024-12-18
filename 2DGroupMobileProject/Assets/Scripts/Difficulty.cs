@@ -11,7 +11,7 @@ public class Difficulty : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        activeDifficulty = easy;
+        //activeDifficulty = easy;
         GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
         if (objs.Length > 1)
         {

@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7db8ab8007eea4eb03ba6617c63225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportLocation: SampleScene
+  teleportLocation: Hunter Test
   teleport2: Difficulty
   canvas: {fileID: 938288345}
 --- !u!114 &241431564
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 938288346}
   - component: {fileID: 938288350}
   m_Layer: 5
-  m_Name: Difficulty
+  m_Name: Difficulty Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,11 +1027,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 938288345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7db8ab8007eea4eb03ba6617c63225, type: 3}
+  m_Script: {fileID: 11500000, guid: fa9987e78ce7f3a4691b345b06254d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportLocation: SampleScene
-  teleport2: Win
   canvas: {fileID: 241431562}
 --- !u!1 &946110547
 GameObject:
@@ -2055,7 +2053,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 938288350}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: SubMenu, Assembly-CSharp
         m_MethodName: Canvas2
         m_Mode: 1
         m_Arguments:
