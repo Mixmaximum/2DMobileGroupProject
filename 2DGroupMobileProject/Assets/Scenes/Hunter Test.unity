@@ -1937,9 +1937,33 @@ PrefabInstance:
       propertyPath: knockbackChance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3174108381886196929, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1266353946, guid: 761b8b2088a695a43813120c18151119, type: 3}
+    - target: {fileID: 4422370215825895865, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422370215825895865, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422370215825895865, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4532431898444588484, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1947,7 +1971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: -2.0232
       objectReference: {fileID: 0}
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1980,6 +2004,18 @@ PrefabInstance:
     - target: {fileID: 5592276092603934769, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368586983348588159, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368586983348588159, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368586983348588159, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7589090038019763400, guid: 7f7feaeb922016749aab1e0f7921b5ac, type: 3}
       propertyPath: freezeChance
