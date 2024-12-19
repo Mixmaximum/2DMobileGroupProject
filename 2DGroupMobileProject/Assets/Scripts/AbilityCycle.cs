@@ -20,6 +20,7 @@ public class AbilityCycle : MonoBehaviour
     float timer = 0;  // Timer for delay
     bool buttonPressed = false;
     public Image image;
+    AbilityUnlock abilityUnlock;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,24 +59,25 @@ public class AbilityCycle : MonoBehaviour
     // Cycle through abilities
     public void Cycle()
     {
-        if (currentAbility == Ability.Fire)
+        if (abilityUnlock.waterUnlocked = true && currentAbility == Ability.Fire)
         {
             currentAbility = Ability.Water;
             Debug.Log("Water ability activated");
             image.color = Color.cyan;
         }
-        else if (currentAbility == Ability.Water)
+        else if (abilityUnlock.windUnlocked = true && currentAbility == Ability.Water)
         {
             currentAbility = Ability.Wind;
             Debug.Log("Wind ability activated");
             image.color = Color.white;
         }
-        else if (currentAbility == Ability.Wind)
+        else if (abilityUnlock.fireUnlocked = true && currentAbility == Ability.Wind)
         {
             currentAbility = Ability.Fire;
             Debug.Log("Fire ability activated");
             image.color = Color.red;
         }
+       
     }
 
     // Trigger shooting based on current ability

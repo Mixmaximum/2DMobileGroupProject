@@ -12,6 +12,9 @@ TagManager:
   - WindBullet
   - GameManager
   - CycleManager
+  - FireUnlocker
+  - WaterUnlocker
+  - WindUnlcoker
   layers:
   - Default
   - TransparentFX
