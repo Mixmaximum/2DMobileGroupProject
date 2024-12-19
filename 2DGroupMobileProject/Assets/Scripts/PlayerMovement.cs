@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     float dashCounter;
     float dashCoolCounter;
     public TrailRenderer trail;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         trail = GetComponent<TrailRenderer>();
         trail.emitting = false;
+      
     }
 
     // Update is called once per frame
@@ -68,6 +70,6 @@ public class PlayerMovement : MonoBehaviour
                 dashCounter = dashLength; // Start dash
                 trail.emitting = true;
             }
-
+          
        }
 }
