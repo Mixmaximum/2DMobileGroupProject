@@ -29,6 +29,7 @@ public class AbilityCycle : MonoBehaviour
         shootFire = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootFire>();
         shootWater = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootWater>();
         shootWind = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShootWind>();
+        abilityUnlock = GameObject.FindGameObjectWithTag("GameManager").GetComponent<AbilityUnlock>();
     }
 
     // Update is called once per frame
