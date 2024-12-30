@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7db8ab8007eea4eb03ba6617c63225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportLocation: Hunter Test
+  teleportLocation: First Level
   teleport2: Difficulty
   canvas: {fileID: 938288345}
 --- !u!114 &241431564
